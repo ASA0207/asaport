@@ -31,9 +31,64 @@ footer{border-top:1px solid var(--line);padding:30px 22px;color:#777b88;font-siz
 .toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,30px);opacity:0;background:#f5f5f8;color:#08090d;padding:12px 17px;border-radius:12px;font-size:12px;font-weight:800;z-index:100;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:800px){nav .navlink{display:none}.work,.work:nth-child(3),.work:nth-child(4),.work:nth-child(5){grid-column:span 12;min-height:330px}.features{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:14px}.cursor{display:none}}
 @media(max-width:520px){.process{grid-template-columns:1fr}h1{font-size:50px}.hero{padding-top:100px}.work-content{left:20px;right:20px}.work h3{font-size:27px}.foot{display:block;line-height:2}}
+
+/* HIPHOP / GLITCH EDITION */
+:root{--acid:#b7ff39;--hot:#9a6cff}
+body{background:#050506}
+body.intro-lock{overflow:hidden}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:18;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px 4px);opacity:.018}
+#intro{position:fixed;inset:0;z-index:999;background:#050506;color:#f5f5f0;display:grid;place-items:center;overflow:hidden;transition:opacity .7s,visibility .7s}
+#intro.out{opacity:0;visibility:hidden}
+.intro-grid{position:absolute;inset:-30%;background-image:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px);background-size:48px 48px;transform:perspective(700px) rotateX(68deg) translateY(20%);animation:gridmove 8s linear infinite}
+@keyframes gridmove{to{background-position:0 96px}}
+.intro-no{position:absolute;font-size:clamp(160px,36vw,600px);font-weight:900;letter-spacing:-.09em;color:#ffffff05;line-height:.7;user-select:none}
+.intro-core{position:relative;text-align:center;width:min(900px,90vw);z-index:2}
+.boot{font:700 10px/1.8 monospace;letter-spacing:.18em;color:#9a9a9f;margin-bottom:28px;height:18px}
+.asa-mark{font-size:clamp(88px,18vw,210px);font-weight:900;line-height:.72;letter-spacing:-.085em;position:relative;display:inline-block;text-shadow:5px 0 0 #7d5cff,-4px 0 0 #74efff}
+.asa-mark:before,.asa-mark:after{content:"ASA";position:absolute;inset:0;pointer-events:none;opacity:.7;clip-path:inset(0 0 55% 0)}
+.asa-mark:before{transform:translate(5px,-3px);color:#74efff;animation:gl1 1.8s infinite steps(2)}
+.asa-mark:after{transform:translate(-5px,3px);color:#b7ff39;clip-path:inset(55% 0 0 0);animation:gl2 1.35s infinite steps(2)}
+@keyframes gl1{50%{transform:translate(-7px,2px);clip-path:inset(20% 0 45% 0)}}@keyframes gl2{50%{transform:translate(8px,-2px);clip-path:inset(65% 0 10% 0)}}
+.intro-sub{margin:26px auto 0;font-size:clamp(13px,2vw,18px);font-weight:800;letter-spacing:.24em}.intro-sub b{color:var(--acid)}
+.enter{margin-top:34px;border:1px solid #ffffff2b;background:#ffffff08;color:#fff;border-radius:99px;padding:14px 22px;font:800 11px Montserrat;letter-spacing:.16em;cursor:pointer;transition:.25s;box-shadow:0 0 0 0 #b7ff3900}.enter:hover{background:var(--acid);color:#080808;box-shadow:0 0 45px #b7ff3944;transform:scale(1.04)}
+.enter i{display:inline-block;width:6px;height:6px;background:var(--acid);border-radius:50%;margin-right:10px;box-shadow:0 0 15px var(--acid)}
+.intro-foot{position:absolute;bottom:24px;left:24px;right:24px;display:flex;justify-content:space-between;color:#68686e;font:700 9px monospace;letter-spacing:.12em}
+.flash{position:fixed;inset:0;background:#fff;z-index:1000;pointer-events:none;opacity:0}
+body.entered .flash{animation:flash .6s ease-out}@keyframes flash{0%{opacity:0}15%{opacity:.9}30%{opacity:0}42%{opacity:.35}100%{opacity:0}}
+.hero h1{text-transform:uppercase}.hero-inner:before{content:"WEB / MOTION / GUILD IDENTITY";display:block;position:absolute;left:-5px;top:-55px;writing-mode:vertical-rl;color:#ffffff20;font-size:9px;letter-spacing:.3em}
+.grad{background-image:linear-gradient(100deg,#fff 5%,#b7ff39 35%,#7c66ff 65%,#fff)}
+.work{border-radius:3px}.work:nth-child(even){transform:rotate(.35deg)}.work:nth-child(odd){transform:rotate(-.25deg)}.work:hover{transform:translateY(-8px) rotate(0)}
+.work-content:before{content:"CASE STUDY";display:inline-block;background:#f4f4ef;color:#070708;font-size:8px;font-weight:900;letter-spacing:.15em;padding:5px 7px;margin-bottom:8px}
+.work h3{font-size:clamp(34px,5vw,64px);letter-spacing:-.06em;text-transform:uppercase}
+.feature{border-radius:3px}.process{border-radius:3px}.contact-card{border-radius:3px}
+.kicker{color:var(--acid)}
+.music-hud{position:fixed;right:18px;bottom:18px;z-index:80;width:270px;border:1px solid #ffffff1f;background:#070708dc;backdrop-filter:blur(18px);padding:12px 13px;box-shadow:0 20px 60px #0009;display:none}
+body.entered .music-hud{display:block;animation:hud .7s .5s both}@keyframes hud{from{opacity:0;transform:translateY(15px)}}
+.hud-top{display:flex;align-items:center;gap:10px}.hud-play{width:35px;height:35px;border:1px solid #ffffff26;background:#ffffff08;color:#fff;cursor:pointer}.hud-meta{min-width:0;flex:1}.hud-meta b{display:block;font-size:10px;letter-spacing:.12em}.hud-meta small{font-size:8px;color:#777;letter-spacing:.12em}.eq{display:flex;align-items:end;gap:2px;height:18px}.eq i{display:block;width:2px;background:var(--acid);height:30%;animation:eq .55s infinite alternate}.eq i:nth-child(2){animation-delay:.15s}.eq i:nth-child(3){animation-delay:.3s}.paused .eq i{animation-play-state:paused;height:20%}@keyframes eq{to{height:100%}}
+.hud-bar{height:2px;background:#ffffff15;margin-top:10px;cursor:pointer}.hud-fill{height:100%;width:0;background:linear-gradient(90deg,var(--acid),#8d70ff)}.hud-row{display:flex;align-items:center;gap:8px;margin-top:8px;color:#777;font:700 8px monospace}.hud-row input{width:72px;accent-color:#b7ff39}.hud-time{margin-left:auto}
+@media(max-width:600px){.intro-foot span:last-child{display:none}.music-hud{width:calc(100% - 24px);right:12px;bottom:12px}.hero-inner:before{display:none}}
+
 </style>
 </head>
-<body>
+<body class="intro-lock">
+
+<div id="intro">
+  <div class="intro-grid"></div><div class="intro-no">0207</div>
+  <div class="intro-core">
+    <div class="boot" id="boot">INITIALIZING ASA.STUDIO / 00%</div>
+    <div class="asa-mark">ASA</div>
+    <div class="intro-sub">MAKE YOUR GUILD <b>A BRAND.</b></div>
+    <button class="enter" id="enter"><i></i> CLICK OR PRESS ENTER</button>
+  </div>
+  <div class="intro-foot"><span>ASA.STUDIO // GUILD WEB DESIGN</span><span>AUDIO REACTIVE EXPERIENCE</span></div>
+</div><div class="flash"></div>
+<audio id="bgm" src="ASA_BGM.mp3" preload="auto"></audio>
+<div class="music-hud paused" id="musicHud">
+ <div class="hud-top"><button class="hud-play" id="hudPlay">▶</button><div class="hud-meta"><b>ASA_BGM</b><small>PORTFOLIO SESSION / 02:04</small></div><div class="eq"><i></i><i></i><i></i></div></div>
+ <div class="hud-bar" id="hudBar"><div class="hud-fill" id="hudFill"></div></div>
+ <div class="hud-row"><span>VOL</span><input id="vol" type="range" min="0" max="1" step=".01" value=".34"><span class="hud-time" id="hudTime">00:00 / 02:04</span></div>
+</div>
+
 <canvas id="stars"></canvas><div class="noise"></div><div class="cursor"></div>
 <nav><a class="brand" href="#"><b>ASA</b> STUDIO</a><div class="links"><a class="navlink" href="#works">PORTFOLIO</a><a class="navlink" href="#features">FEATURES</a><a class="navlink" href="#process">PROCESS</a><a class="cta" href="https://open.kakao.com/o/sxEkCAQi" target="_blank">제작 문의 ↗</a></div></nav>
 
@@ -91,4 +146,16 @@ document.querySelectorAll('a,.btn,summary').forEach(el=>{el.addEventListener('mo
 const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('on')),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 document.querySelectorAll('a[href*="open.kakao.com"]').forEach(a=>a.addEventListener('click',()=>{const t=document.querySelector('.toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}));
 let keys='';addEventListener('keydown',e=>{keys=(keys+e.key.toLowerCase()).slice(-3);if(keys==='asa'){document.body.animate([{filter:'brightness(1)'},{filter:'brightness(2) hue-rotate(60deg)'},{filter:'brightness(1)'}],{duration:650});const d=document.createElement('div');d.textContent='ASA';Object.assign(d.style,{position:'fixed',inset:'0',display:'grid',placeItems:'center',font:'900 min(28vw,260px) Montserrat',zIndex:200,pointerEvents:'none',background:'#05060bd9'});document.body.appendChild(d);d.animate([{opacity:0,transform:'scale(.6)'},{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(1.35)'}],{duration:900,easing:'ease-out'}).onfinish=()=>d.remove()}});
+
+const intro=document.querySelector('#intro'),enter=document.querySelector('#enter'),bgm=document.querySelector('#bgm'),hud=document.querySelector('#musicHud'),play=document.querySelector('#hudPlay'),vol=document.querySelector('#vol'),fill=document.querySelector('#hudFill'),bar=document.querySelector('#hudBar'),timeEl=document.querySelector('#hudTime');
+let bootN=0;const bootTimer=setInterval(()=>{bootN=Math.min(100,bootN+Math.ceil(Math.random()*13));document.querySelector('#boot').textContent=`INITIALIZING ASA.STUDIO / ${String(bootN).padStart(2,'0')}%`;if(bootN>=100){clearInterval(bootTimer);document.querySelector('#boot').textContent='SYSTEM READY // AUDIO ARMED'}},90);
+function enterSite(){if(document.body.classList.contains('entered'))return;document.body.classList.add('entered');document.body.classList.remove('intro-lock');intro.classList.add('out');bgm.volume=.34;bgm.play().catch(()=>{});hud.classList.remove('paused');play.textContent='Ⅱ';setTimeout(()=>intro.remove(),800)}
+enter.addEventListener('click',enterSite);addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!document.body.classList.contains('entered'))enterSite()});
+play.addEventListener('click',()=>{if(bgm.paused){bgm.play();play.textContent='Ⅱ';hud.classList.remove('paused')}else{bgm.pause();play.textContent='▶';hud.classList.add('paused')}});
+vol.addEventListener('input',()=>bgm.volume=+vol.value);
+function fmt(s){s=Math.max(0,s||0);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0')}
+bgm.addEventListener('timeupdate',()=>{fill.style.width=((bgm.currentTime/(bgm.duration||124))*100)+'%';timeEl.textContent=`${fmt(bgm.currentTime)} / ${fmt(bgm.duration||124)}`});
+bgm.addEventListener('ended',()=>{play.textContent='▶';hud.classList.add('paused')});
+bar.addEventListener('click',e=>{const r=bar.getBoundingClientRect();bgm.currentTime=((e.clientX-r.left)/r.width)*(bgm.duration||124)});
+
 </script></body></html>

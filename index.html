@@ -68,6 +68,32 @@ body.entered .music-hud{display:block;animation:hud .7s .5s both}@keyframes hud{
 .hud-bar{height:2px;background:#ffffff15;margin-top:10px;cursor:pointer}.hud-fill{height:100%;width:0;background:linear-gradient(90deg,var(--acid),#8d70ff)}.hud-row{display:flex;align-items:center;gap:8px;margin-top:8px;color:#777;font:700 8px monospace}.hud-row input{width:72px;accent-color:#b7ff39}.hud-time{margin-left:auto}
 @media(max-width:600px){.intro-foot span:last-child{display:none}.music-hud{width:calc(100% - 24px);right:12px;bottom:12px}.hero-inner:before{display:none}}
 
+
+/* PORTFOLIO EXPANSION — 11 WORKS */
+#works .grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+#works .work,#works .work:nth-child(3),#works .work:nth-child(4),#works .work:nth-child(5){grid-column:span 6;min-height:370px}
+#works .work:nth-child(3n){grid-column:span 7}
+#works .work:nth-child(3n+1):not(:first-child){grid-column:span 5}
+#works .work.featured{grid-column:span 12;min-height:420px}
+.work{box-shadow:inset 0 1px #ffffff08,0 22px 55px #00000028;transform-style:preserve-3d}
+.work:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,transparent 20%,#ffffff0a 48%,transparent 72%);transform:translateX(-120%);transition:transform .8s ease}
+.work:hover:before{transform:translateX(120%)}
+.work-content{transition:transform .35s ease}.work:hover .work-content{transform:translateY(-4px)}
+.work .tag{display:flex;align-items:center;gap:8px}.work .tag:before{content:"";width:18px;height:1px;background:currentColor;opacity:.7}
+.work h3{letter-spacing:-.035em;text-wrap:balance}.work p{text-wrap:pretty}
+.city{background:radial-gradient(circle at 78% 15%,#8eb7ff38,transparent 30%),radial-gradient(circle at 20% 85%,#86a9d71c,transparent 28%),linear-gradient(145deg,#17202d,#080a0f 65%)}
+.hocheon{background:radial-gradient(circle at 78% 17%,#e8e2c94a,transparent 15%),radial-gradient(circle at 72% 24%,#d8d4c11b,transparent 28%),linear-gradient(145deg,#24262c,#08090d 66%)}
+.playlist{background:radial-gradient(circle at 20% 15%,#ff5baf35,transparent 28%),radial-gradient(circle at 82% 20%,#766cff38,transparent 30%),linear-gradient(145deg,#27162c,#090811 68%)}
+.bogeul{background:radial-gradient(circle at 78% 20%,#6eeeff42,transparent 18%),radial-gradient(circle at 65% 38%,#b5fff52c,transparent 14%),linear-gradient(145deg,#10303a,#071014 68%)}
+.moon{background:radial-gradient(circle at 78% 18%,#fff2bd55,transparent 17%),radial-gradient(circle at 76% 18%,#fff8df18,transparent 32%),linear-gradient(145deg,#20233b,#080912 66%)}
+.tokyo{background:radial-gradient(circle at 82% 16%,#ff527c3c,transparent 28%),radial-gradient(circle at 18% 80%,#6c79ff22,transparent 30%),linear-gradient(145deg,#2b1420,#09080d 67%)}
+.work-index{position:absolute;top:26px;left:28px;font:800 10px/1 Montserrat,sans-serif;letter-spacing:.18em;color:#ffffff5e;z-index:2}
+.work.featured .work-index{color:#ffffff80}
+.portfolio-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.portfolio-pill{border:1px solid var(--line);border-radius:999px;padding:8px 11px;color:#aeb1bd;font-size:10px;letter-spacing:.1em;background:#ffffff05}
+.works-count{font-size:clamp(70px,12vw,150px);font-weight:900;letter-spacing:-.08em;line-height:.75;color:#ffffff08;position:absolute;right:0;top:-20px;pointer-events:none}
+@media(max-width:800px){#works .work,#works .work:nth-child(3),#works .work:nth-child(4),#works .work:nth-child(5),#works .work:nth-child(3n),#works .work:nth-child(3n+1):not(:first-child),#works .work.featured{grid-column:span 12;min-height:330px}.works-count{font-size:80px;top:5px}.work-index{left:20px}.portfolio-meta{gap:7px}.portfolio-pill{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.work:hover{transform:none}}
+
 </style>
 </head>
 <body class="intro-lock">
@@ -101,13 +127,19 @@ body.entered .music-hud{display:block;animation:hud .7s .5s both}@keyframes hud{
 
 <div class="marquee"><div class="track"><span>CUSTOM DESIGN</span><span>RESPONSIVE WEB</span><span>BGM PLAYER</span><span>INTERACTIVE MOTION</span><span>GUILD GUIDE</span><span>GITHUB PAGES</span><span>CUSTOM DESIGN</span><span>RESPONSIVE WEB</span><span>BGM PLAYER</span><span>INTERACTIVE MOTION</span><span>GUILD GUIDE</span><span>GITHUB PAGES</span></div></div>
 
-<section id="works"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">01 · SELECTED WORKS</div><h2>길드마다,<br>전혀 다른 세계관.</h2></div><p>실제 제작한 페이지입니다. 카드를 누르면 새 창에서 완성본을 직접 확인할 수 있습니다.</p></div>
+<section id="works"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">01 · SELECTED WORKS</div><h2>길드마다,<br>전혀 다른 세계관.</h2></div><div style="position:relative"><div class="works-count">11</div><p>실제 제작한 페이지입니다. 카드를 누르면 새 창에서 완성본을 직접 확인할 수 있습니다.</p><div class="portfolio-meta"><span class="portfolio-pill">11 PROJECTS</span><span class="portfolio-pill">RESPONSIVE</span><span class="portfolio-pill">CUSTOM MOTION</span></div></div></div>
 <div class="grid">
-<a class="work reveal" href="https://asa0207.github.io/-/" target="_blank"><div class="work-bg ryokan"></div><div class="visit">↗</div><div class="work-content"><div class="tag">JAPANESE NIGHT · GUILD GUIDE</div><h3>旅館 · RYOKAN</h3><p>달빛 아래 머무는 료칸. 입장 연출과 음악, 규칙·제재·채널 안내를 일본풍 야간 감성으로 구성.</p></div></a>
-<a class="work reveal" href="https://asa0207.github.io/euo/" target="_blank"><div class="work-bg euno"></div><div class="visit">↗</div><div class="work-content"><div class="tag">GOLDEN NIGHT · PRIVATE GUILD</div><h3>EUNO · 은오</h3><p>절제된 골드 톤과 야간 분위기. 규칙부터 운영진, 오픈채팅까지 한 흐름으로 연결.</p></div></a>
-<a class="work reveal" href="https://asa0207.github.io/Noxx/" target="_blank"><div class="work-bg noxx"></div><div class="visit">↗</div><div class="work-content"><div class="tag">NIGHT DANCER · SOCIAL GUILD</div><h3>NOXX</h3><p>밤에 시작되는 성인 친목 길드. 스케줄, 규정, 기록, 가입 양식과 음악 플레이어를 하나의 테마로.</p></div></a>
-<a class="work reveal" href="https://asa0207.github.io/star/" target="_blank"><div class="work-bg star"></div><div class="visit">↗</div><div class="work-content"><div class="tag">STARRY ANNEX · OFFICIAL GUIDE</div><h3>AnneX · 별관</h3><p>별빛 아래의 비밀 별관을 모티프로 한 차분한 공식 안내 페이지.</p></div></a>
-<a class="work reveal" href="https://asa0207.github.io/Grim/" target="_blank"><div class="work-bg grim"></div><div class="visit">↗</div><div class="work-content"><div class="tag">FOREST · GROW TOGETHER</div><h3>GRIM</h3><p>함께 달리고 성장하는 길드의 방향성을 숲과 성장의 이미지로 표현. 가입 조건·환영 대상·전적·상담까지 자연스럽게 연결.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/-/" target="_blank" rel="noopener noreferrer"><div class="work-bg ryokan"></div><div class="work-index">01 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">JAPANESE NIGHT · GUILD GUIDE</div><h3>旅館 · RYOKAN</h3><p>달빛 아래 머무는 료칸. 입장 연출과 음악, 규칙·제재·채널 안내를 일본풍 야간 감성으로 구성.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/euo/" target="_blank" rel="noopener noreferrer"><div class="work-bg euno"></div><div class="work-index">02 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">GOLDEN NIGHT · PRIVATE GUILD</div><h3>EUNO · 은오</h3><p>절제된 골드 톤과 야간 분위기. 규칙부터 운영진, 오픈채팅까지 한 흐름으로 연결.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/Noxx/" target="_blank" rel="noopener noreferrer"><div class="work-bg noxx"></div><div class="work-index">03 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">NIGHT DANCER · SOCIAL GUILD</div><h3>NOXX</h3><p>밤에 시작되는 성인 친목 길드. 스케줄, 규정, 기록, 가입 양식과 음악 플레이어를 하나의 테마로.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/star/" target="_blank" rel="noopener noreferrer"><div class="work-bg star"></div><div class="work-index">04 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">STARRY ANNEX · OFFICIAL GUIDE</div><h3>AnneX · 별관</h3><p>별빛 아래의 비밀 별관을 모티프로 한 차분한 공식 안내 페이지.</p></div></a>
+<a class="work reveal featured" href="https://asa0207.github.io/Grim/" target="_blank" rel="noopener noreferrer"><div class="work-bg grim"></div><div class="work-index">05 / 11 · FEATURED</div><div class="visit">↗</div><div class="work-content"><div class="tag">FOREST · GROW TOGETHER</div><h3>GRIM</h3><p>초심의존을 중심으로 내전·점령전·승작 파티까지, 함께 달리고 성장하는 길드의 방향성을 깊은 숲의 이미지로 표현.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/city/" target="_blank" rel="noopener noreferrer"><div class="work-bg city"></div><div class="work-index">06 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">RAINY CITY · ATMOSPHERIC GUILD</div><h3>도시</h3><p>도시의 밤과 빗소리 같은 차분한 무드를 중심으로, 비 내리는 연출과 음악 UX를 결합한 감성형 길드 페이지.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/HOCHEON/" target="_blank" rel="noopener noreferrer"><div class="work-bg hocheon"></div><div class="work-index">07 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">FULL MOON · REAPER CONCEPT</div><h3>호천</h3><p>안개, 보름달, 사신의 이미지를 강하게 살린 다크 판타지 컨셉. 길드 조건과 규칙, 랜덤 길드마스터 이벤트까지 한 세계관으로 구성.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/Playlist/" target="_blank" rel="noopener noreferrer"><div class="work-bg playlist"></div><div class="work-index">08 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">MUSIC · SOCIAL GUILD</div><h3>Playlist</h3><p>음악을 중심으로 길드 규칙과 콘텐츠 일정을 리듬감 있게 보여주는 페이지. BGM과 인터랙션을 적극 활용한 소셜 컨셉.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/BOGEUL/" target="_blank" rel="noopener noreferrer"><div class="work-bg bogeul"></div><div class="work-index">09 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">BUBBLE · FRESH & PLAYFUL</div><h3>보글</h3><p>구름 대신 보글보글 올라오는 물방울을 메인 모티프로 잡은 상큼한 디자인. 밝은 음악과 생동감 있는 움직임을 결합.</p></div></a>
+<a class="work reveal" href="https://asa0207.github.io/moon/" target="_blank" rel="noopener noreferrer"><div class="work-bg moon"></div><div class="work-index">10 / 11</div><div class="visit">↗</div><div class="work-content"><div class="tag">MOONLIGHT · RESTFUL GUILD</div><h3>둥근달</h3><p>‘편안한 안식처’를 키워드로 달빛과 여백을 활용한 안정적인 분위기. 매너 규칙과 길드 활동 정보를 편안하게 전달.</p></div></a>
+<a class="work reveal featured" href="https://asa0207.github.io/TOKYO/" target="_blank" rel="noopener noreferrer"><div class="work-bg tokyo"></div><div class="work-index">11 / 11 · NEW</div><div class="visit">↗</div><div class="work-content"><div class="tag">TOKYO NIGHT · SMALL SOCIAL GUILD</div><h3>TOKYO · 도쿄</h3><p>도쿄의 네온 나이트를 모티프로 한 소수 친목 길드 페이지. 길드 레벨·상점·멤버 구성과 필수 커뮤니티 정보를 선명하게 구조화.</p></div></a>
 </div></div></section>
 
 <section id="features"><div class="wrap"><div class="section-head reveal"><div><div class="kicker">02 · WHAT I CAN BUILD</div><h2>소개 페이지 그 이상.</h2></div><p>필요한 기능을 길드 컨셉에 맞게 조합합니다. 모든 페이지는 PC와 모바일을 함께 고려합니다.</p></div>
